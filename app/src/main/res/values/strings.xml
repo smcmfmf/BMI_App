@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">BMI_App</string>
+    <string name="title">BMI</string>
+    <string name="text_Name">성명</string>
+    <string name="text_Kg">체중(Kg)</string>
+    <string name="text_Cm">신장(Cm)</string>
+    <string name="result_Text">최종 결과</string>
+    <string name="result_Low">BMI_Low</string>
+    <string name="result_Meduim">BMI_Meduim</string>
+    <string name="result_High">BMI_High</string>
+    <string name="result_XHigh">BMI_XHigh</string>
+    <string name="result_XLHigh">BMI_XLHigh</string>
+</resources>
