@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else if(Kg_2 == 0)
                 {
-                    Err_value = "체중"; /* 값이 0일 때 다시 입력 문구를 토스트로 출력 안됨 */
+                    Err_value = "체중"; /* 값이 0일 때 입력 문구를 토스트로 출력 */
                 }
                 else
                 {
