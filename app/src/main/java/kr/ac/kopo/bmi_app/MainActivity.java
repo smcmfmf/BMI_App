@@ -55,83 +55,85 @@ public class MainActivity extends AppCompatActivity {
 
             if (Name_value.equals("") || Kg_value.equals("") || Cm_value.equals(""))
             {
-                if(Kg_value.equals(""))
-                {
-                    Err_value = "체중";
-                    Kg.setText("");
-                    Kg.setFocusable(true);
-                }
-                else if(Cm_value.equals(""))
-                {
-                    Err_value = "신장";
-                    Cm.setText("");
-                    Cm.setFocusable(true);
-                }
-                else
+                if(Name_value.equals(""))
                 {
                     Err_value = "성명";
                     Name.setFocusable(true);
                 }
+                else if(Kg_value.equals(""))
+                {
+                    Err_value = "체중";
+                    Kg.setFocusable(true);
+                }
+                else
+                {
+                    Err_value = "신장";
+                    Cm.setFocusable(true);
+                }
                 Toast.makeText(getApplicationContext(),Err_value + "의 값이 입력되지 않았습니다.", Toast.LENGTH_SHORT).show();
-                Name.setFocusable(true);
             }
             else
             {
                 double Kg = Double.parseDouble(Kg_value);
                 double Cm = Double.parseDouble(Cm_value);
-                double Result = 0;
-
-                double Kg_2 = Kg * Kg; // 몸무게 제곱
-                String State = "";
-
-                Result = Kg_2 / Cm;
-
-                Button btnEvent = (Button) v;
-                if(v == btn_result)
+                if(Kg == 0)
                 {
-                    if(Result <= 18.5 && Result >= 0)
-                    {
-                        /* 저체중 */
-                        bmi_image.setImageResource(R.drawable.low);
-                        State = "저체중";
-                    }
-                    else if(Result <= 22.9)
-                    {
-                        /* 정상체중 */
-                        bmi_image.setImageResource(R.drawable.mid);
-                        State = "정상체중";
-                    }
-                    else if(Result <= 25)
-                    {
-                        /* 과체중 */
-                        bmi_image.setImageResource(R.drawable.shigh);
-                        State = "과체중";
-                    }
-                    else if(Result <= 29.9)
-                    {
-                        /* 경도비만 */
-                        bmi_image.setImageResource(R.drawable.high);
-                        State = "경도비만";
-                    }
-                    else if(Result >= 30)
-                    {
-                        /* 고도비만 */
-                        bmi_image.setImageResource(R.drawable.xhigh);
-                        State = "고도비만";
-                    }
-                    else
-                    {
-                        /* 체중이나 신장에 값이 0일 때 */
-                        State = "오류";
-                        return true;
-                    }
-                    result_title.setText(String.format("%s!", State)); /* BMI 결과 표시 */
-                    result.setText(String.format("%s님의 체중은 %.2fKg이고 신장은 %.2fCm이므로 BMI 지수는 %.2f 입니다.", Name_value, Kg, Cm, Result));
+                    Err_value = "체중";
+                    Toast.makeText(getApplicationContext(), Err_value + "의 값에는 0을 입력할 수 없습니다.", Toast.LENGTH_SHORT).show();
+                }
+                else if(Cm == 0)
+                {
+                    Err_value = "신장";
+                    Toast.makeText(getApplicationContext(), Err_value + "의 값에는 0을 입력할 수 없습니다.", Toast.LENGTH_SHORT).show();
                 }
                 else
                 {
-                    Name.setText("");
-                    Name.setFocusable(true);
+                    double Result;
+
+                    double Cm_2 = Cm / 100; // 신장의 단위 (Cm -> m) 변환
+                    Cm_2 = Cm_2 * Cm_2; // 신장의 제곱
+
+                    String State = "";
+                    Character Per = '%';
+
+                    Result = Kg / Cm_2;
+
+                    Button btnEvent = (Button) v;
+                    if(v == btn_result)
+                    {
+                        if(Result <= 18.5 && Result >= 0)
+                        {
+                            /* 저체중 */
+                            bmi_image.setImageResource(R.drawable.low);
+                            State = "저체중";
+                        }
+                        else if(Result <= 22.9)
+                        {
+                            /* 정상체중 */
+                            bmi_image.setImageResource(R.drawable.mid);
+                            State = "정상체중";
+                        }
+                        else if(Result <= 25)
+                        {
+                            /* 과체중 */
+                            bmi_image.setImageResource(R.drawable.shigh);
+                            State = "과체중";
+                        }
+                        else if(Result <= 29.9)
+                        {
+                            /* 경도비만 */
+                            bmi_image.setImageResource(R.drawable.high);
+                            State = "경도비만";
+                        }
+                        else if(Result >= 30)
+                        {
+                            /* 고도비만 */
+                            bmi_image.setImageResource(R.drawable.xhigh);
+                            State = "고도비만";
+                        }
+                        result_title.setText(String.format("%s!", State)); /* BMI 결과 표시 */
+                        result.setText(String.format("%s 님의 체중은 %.2fKg 이고 신장은 %.2fCm 이므로 BMI 지수는 %.2f%c 입니다.", Name_value, Kg, Cm, Result, Per));
+                    }
                 }
             }
             return true;
