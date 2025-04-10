@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="text_Xs">10sp</dimen>
-    <dimen name="text_S">15sp</dimen>
+    <dimen name="text_S">14sp</dimen>
     <dimen name="text_M">20sp</dimen>
-    <dimen name="text_L">25sp</dimen>
+    <dimen name="text_L">24sp</dimen>
     <dimen name="text_XL">30sp</dimen>
-    <dimen name="text_XXL">35sp</dimen>
+    <dimen name="text_XXL">34sp</dimen>
     <dimen name="margin_XXS">6sp</dimen>
     <dimen name="margin_XS">10sp</dimen>
     <dimen name="margin_S">14sp</dimen>
     <dimen name="margin_M">18sp</dimen>
     <dimen name="margin_L">22sp</dimen>
     <dimen name="margin_XL">26sp</dimen>
-    <dimen name="margin_XXL">30sp</dimen>
+    <dimen name="margin_XXL">60sp</dimen>
 </resources>

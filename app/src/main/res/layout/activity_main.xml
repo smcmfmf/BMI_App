@@ -14,63 +14,77 @@
         android:text="@string/title"
         android:textSize="@dimen/text_L"
         android:textColor="@color/mint"
-        android:background="@color/dark_black"
+        android:background="@color/green"
         android:gravity="center"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/margin_S"
-        android:text="@string/text_Name"
-        android:textSize="@dimen/text_M"/>
-
-    <EditText
-        android:id="@+id/Name"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/margin_XXL"
-        android:layout_marginRight="@dimen/margin_XXL"
-        android:layout_marginBottom="@dimen/margin_XXS"
-        android:hint="성명을 입력하세요!"
-        android:inputType="text" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/margin_S"
-        android:text="@string/text_Kg"
-        android:textSize="@dimen/text_M"/>
-    <EditText
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_XXL"
+            android:text="@string/text_Name"
+            android:textSize="@dimen/text_M"/>
+        <EditText
+            android:id="@+id/Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_S"
+            android:layout_marginRight="@dimen/margin_XXL"
+            android:layout_marginBottom="@dimen/margin_XXS"
+            android:hint="성명을 입력하세요!"
+            android:inputType="text"/>
+    </LinearLayout>
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/Kg"
-        android:inputType="numberDecimal"
-        android:layout_marginLeft="@dimen/margin_XXL"
-        android:layout_marginRight="@dimen/margin_XXL"
-        android:layout_marginBottom="@dimen/margin_XXS"
-        android:hint="체중을 입력하세요!"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/margin_S"
-        android:text="@string/text_Cm"
-        android:textSize="@dimen/text_M"/>
-    <EditText
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_XXL"
+            android:text="@string/text_Kg"
+            android:textSize="@dimen/text_M"/>
+        <EditText
+            android:id="@+id/Kg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_M"
+            android:layout_marginRight="@dimen/margin_XXL"
+            android:layout_marginBottom="@dimen/margin_XXS"
+            android:hint="체중을 입력하세요!"
+            android:inputType="numberDecimal"/>
+    </LinearLayout>
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/Cm"
-        android:inputType="numberDecimal"
-        android:layout_marginLeft="@dimen/margin_XXL"
-        android:layout_marginRight="@dimen/margin_XXL"
-        android:hint="신장을 입력하세요!"/>
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_XXL"
+            android:text="@string/text_Cm"
+            android:textSize="@dimen/text_M"/>
+        <EditText
+            android:id="@+id/Cm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_XS"
+            android:layout_marginRight="@dimen/margin_XXL"
+            android:layout_marginBottom="@dimen/margin_XXS"
+            android:hint="신장을 입력하세요!"
+            android:inputType="numberDecimal"/>
+    </LinearLayout>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/result_Text"
         android:textSize="@dimen/text_M"
         android:textColor="@color/yellow"
-        android:layout_marginLeft="@dimen/margin_S"
-        android:layout_marginRight="@dimen/margin_S"
+        android:backgroundTint="@color/blue"
+        android:layout_marginLeft="@dimen/margin_L"
+        android:layout_marginRight="@dimen/margin_L"
         android:id="@+id/btn_result"/>
     <ImageView
         android:layout_width="match_parent"
@@ -81,10 +95,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="@dimen/text_XXL"
+        android:textColor="@color/light_red"
         android:id="@+id/result_title"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/text_M"
+        android:textSize="@dimen/text_S"
         android:id="@+id/result"/>
 </LinearLayout>
