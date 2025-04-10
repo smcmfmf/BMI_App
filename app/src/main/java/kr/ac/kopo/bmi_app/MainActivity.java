@@ -5,6 +5,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText Name, Kg, Cm;
     TextView result, result_title;
+    ImageView bmi_image;
     Button btn_result;
 
     @Override
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         Kg = findViewById(R.id.Kg);
         Cm = findViewById(R.id.Cm);
         btn_result = findViewById(R.id.btn_result);
+        bmi_image = findViewById(R.id.bmi_image);
         result = findViewById(R.id.result);
         result_title = findViewById(R.id.result_title);
 
@@ -81,19 +84,7 @@ public class MainActivity extends AppCompatActivity {
                 double Kg_2 = Kg * Kg; // 몸무게 제곱
                 String State = "";
 
-                if(Kg_2 != 0 && Cm != 0)
-                {
-                    Result = Kg_2 / Cm;
-                }
-                else if(Kg_2 == 0)
-                {
-                    Err_value = "체중"; /* 값이 0일 때 입력 문구를 토스트로 출력 */
-                }
-                else
-                {
-                    Err_value = "신장";
-                }
-                Toast.makeText(getApplicationContext(),Err_value + "의 값에는 0을 입력할 수 없습니다.", Toast.LENGTH_SHORT).show();
+                Result = Kg_2 / Cm;
 
                 Button btnEvent = (Button) v;
                 if(v == btn_result)
@@ -101,26 +92,31 @@ public class MainActivity extends AppCompatActivity {
                     if(Result <= 18.5 && Result >= 0)
                     {
                         /* 저체중 */
+                        bmi_image.setImageResource(R.drawable.low);
                         State = "저체중";
                     }
                     else if(Result <= 22.9)
                     {
                         /* 정상체중 */
+                        bmi_image.setImageResource(R.drawable.mid);
                         State = "정상체중";
                     }
                     else if(Result <= 25)
                     {
                         /* 과체중 */
+                        bmi_image.setImageResource(R.drawable.shigh);
                         State = "과체중";
                     }
                     else if(Result <= 29.9)
                     {
                         /* 경도비만 */
+                        bmi_image.setImageResource(R.drawable.high);
                         State = "경도비만";
                     }
                     else if(Result >= 30)
                     {
                         /* 고도비만 */
+                        bmi_image.setImageResource(R.drawable.xhigh);
                         State = "고도비만";
                     }
                     else
