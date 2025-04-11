@@ -94,7 +94,6 @@ public class MainActivity extends AppCompatActivity {
                     Cm_2 = Cm_2 * Cm_2; // 신장의 제곱
 
                     String State = "";
-                    Character Per = '%';
 
                     Result = Kg / Cm_2;
 
@@ -132,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
                             State = "고도비만";
                         }
                         result_title.setText(String.format("%s!", State)); /* BMI 결과 표시 */
-                        result.setText(String.format("%s 님의 체중은 %.2fKg 이고 신장은 %.2fCm 이므로 BMI 지수는 %.2f%c 입니다.", Name_value, Kg, Cm, Result, Per));
+                        result.setText(String.format("%s 님의 체중은 %.2fKg 이고 신장은 %.2fCm 이므로 BMI 지수는 %.2f㎏/㎡ 입니다.", Name_value, Kg, Cm, Result));
                     }
                 }
             }
