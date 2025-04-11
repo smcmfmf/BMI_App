@@ -2,8 +2,8 @@
     <string name="app_name">BMI_App</string>
     <string name="title">BMI</string>
     <string name="text_Name">성명</string>
-    <string name="text_Kg">체중(Kg)</string>
-    <string name="text_Cm">신장(Cm)</string>
+    <string name="text_Kg">체중(kg)</string>
+    <string name="text_Cm">신장(cm)</string>
     <string name="result_Text">계산하기</string>
     <string name="result_Low">BMI_Low</string>
     <string name="result_Meduim">BMI_Meduim</string>

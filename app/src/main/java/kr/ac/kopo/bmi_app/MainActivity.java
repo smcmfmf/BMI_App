@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
                             State = "고도비만";
                         }
                         result_title.setText(String.format("%s!", State)); /* BMI 결과 표시 */
-                        result.setText(String.format("%s 님의 체중은 %.2fKg 이고 신장은 %.2fCm 이므로 BMI 지수는 %.2f㎏/㎡ 입니다.", Name_value, Kg, Cm, Result));
+                        result.setText(String.format("%s 님의 체중은 %.2fkg 이고 신장은 %.2fcm 이므로 BMI 지수는 %.2f㎏/㎡ 입니다.", Name_value, Kg, Cm, Result));
                     }
                 }
             }
